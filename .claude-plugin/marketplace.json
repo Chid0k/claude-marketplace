@@ -1,0 +1,13 @@
+{
+  "name": "pentest-plugin-by-chidok",
+  "owner": {
+    "name": "DoDucChinh"
+  },
+  "plugins": [
+    {
+      "name": "pentest-plugin",
+      "source": "./plugins/pentest-plugin",
+      "description": "A plugin that supports penetration testing of web applications."
+    }
+  ]
+}
