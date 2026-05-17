@@ -9,5 +9,11 @@
       "source": "./plugins/pentest-plugin",
       "description": "A plugin that supports penetration testing of web applications."
     }
+  ],
+  "agents": [
+    {
+      "name": "pentest-agent",
+      "description": "An agent that uses the pentest-plugin to perform penetration testing tasks."
+    }
   ]
 }
