@@ -1,8 +1,9 @@
 {
-  "name": "pentest-plugin",
+  "name": "pentest-marketplace-by-chidok",
   "owner": {
     "name": "ChinhDD + ThaoDT"
   },
+  
   "plugins": [
     {
       "name": "vuln-detect-plugin",
