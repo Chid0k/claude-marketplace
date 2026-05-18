@@ -12,7 +12,7 @@
   ],
   "agents": [
     {
-      "name": "pentest-agent",
+      "name": "pentester-assistant",
       "description": "An agent that uses the pentest-plugin to perform penetration testing tasks."
     }
   ]
