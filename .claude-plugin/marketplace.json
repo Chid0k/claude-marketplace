@@ -1,13 +1,18 @@
 {
   "name": "pentest-plugin-by-chidok",
   "owner": {
-    "name": "DoDucChinh"
+    "name": "ChinhDD + ThaoDT"
   },
   "plugins": [
     {
-      "name": "pentest-plugin",
-      "source": "./plugins/pentest-plugin",
-      "description": "A plugin that supports penetration testing of web applications."
+      "name": "vuln-detect-plugin",
+      "source": "./plugins/vuln-detect-plugin",
+      "description": "A plugin for detecting vulnerabilities in web applications."
+    },
+    {
+      "name": "recon-plugin",
+      "source": "./plugins/recon-plugin copy",
+      "description": "A plugin that assists in web application reconnaissance and penetration testing."
     }
   ],
   "agents": [
