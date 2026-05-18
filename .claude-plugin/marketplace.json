@@ -12,7 +12,7 @@
     },
     {
       "name": "recon-plugin",
-      "source": "./plugins/recon-plugin copy",
+      "source": "./plugins/recon-plugin",
       "description": "A plugin that assists in web application reconnaissance and penetration testing."
     }
   ],
