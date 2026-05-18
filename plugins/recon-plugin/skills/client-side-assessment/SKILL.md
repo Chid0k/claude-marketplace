@@ -103,7 +103,34 @@ Upon completion of the analysis, the output should be organized into a clearly s
 ### 1. Target Summary
 - **URL/Application:** [Website link or system identifier]
 
-- **Detection Technology:** [Framework, CMS, JS Library, REST/WebSockets connection protocol...]
+- **Discovery Technology:** [Framework, CMS, JS Library, REST/WebSockets connection protocol...]
 
 ### 2. List of Discovered API Endpoints in JS
-List all APs in detail.
+List all APIs found in the static source code in detail:
+
+| ID | Method | API Endpoint URL | Parameters (Query / Body) | State (Public / Hidden) |
+
+|----|--------|------------------|--------------------------|----------------------------|
+
+| 1 | POST | `/api/v1/auth/login` | `username`, `password` | Public |
+
+| 2 | GET | `/api/internal/debug/users` | `limit`, `offset` | Hidden (Found in chunk.js) |
+
+### 3. Sensitive Data & Hardcoded Content
+Report specific details of found sensitive data strings:
+- **Data Type:** (Examples: API Key, Password-containing Comment, Link Staging...)
+- **Detected Content:** [Raw data or hardcoded string]
+
+- **Location Found:** [JS file name, line number (if any), or specific HTML tag]
+
+### 4. Browser Storage Assessment
+- **LocalStorage:** [List Key-Values] -> [Sensitivity & Lifespan Assessment]
+- **SessionStorage:** [List Key-Values] -> [Logout Deletion Mechanism Assessment]
+- **IndexedDB/WebSQL:** [DB Structure & Detected Data]
+
+### 5. Security Risk & Exploitation Assessment Matrix
+Based on the information gathered above, provide a security impact assessment:
+- **Severity Level:** (Critical / High / Medium / Low / Info)
+- **Hypothetical Attack Scenario:** (Example: An attacker could exploit the hidden endpoint `/api/internal/...` combined with changing the `role` value in LocalStorage to escalate privileges due to the lack of server-side validation).
+
+- **Recommended Remediation:** Instruct developers on how to modify the source code (e.g., change the token to an `HttpOnly` cookie, encrypt client data, remove the debug log during production builds).
