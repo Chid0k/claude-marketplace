@@ -115,11 +115,8 @@ Upon completion of the analysis, the output should be organized into a clearly s
 List all APIs found in the static source code in detail:
 
 | ID | Method | API Endpoint URL | Parameters (Query / Body) | State (Public / Hidden) |
-
-|----|--------|------------------|--------------------------|----------------------------|
-
+| :--- | :--- | :--- | :--- | :--- |
 | 1 | POST | `/api/v1/auth/login` | `username`, `password` | Public |
-
 | 2 | GET | `/api/internal/debug/users` | `limit`, `offset` | Hidden (Found in chunk.js) |
 
 ### 3. Sensitive Data & Hardcoded Content
