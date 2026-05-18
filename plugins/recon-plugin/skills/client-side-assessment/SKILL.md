@@ -9,6 +9,7 @@ disable-model-invocation: true
 ## Overview
 This skill guides performing automated information security testing and evaluation on the client-side interface of web applications. The focus of this skill is detecting information leaks in source code/static files and evaluating the secure configuration of browser storage mechanisms.
 
+
 ## Prerequisites & Tools Coordination
 - **Playwright MCP**: Preferred for direct interaction with the actual web application, full JavaScript rendering, user behavior simulation, and direct access to browser APIs.
 
@@ -97,6 +98,11 @@ Use **Playwright MCP** to execute JavaScript code (`page.evaluate()`) to directl
 ---
 
 ## Best Practices & Output Format
+
+Ensure all findings are directly linked to specific input information. Maintain verifiable information based on technical and factual evidence.
+
+Avoid making general, theoretical statements; provide a concrete impact if the security vulnerability is exploited.
+You are granted full access to the tools and permissions to gather information about web application objects. DO NOT use for general queries. Use only when there is a clear requirement for automated execution.
 
 Upon completion of the analysis, the output should be organized into a clearly structured report with the following sections:
 
