@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Recon--Plugin-v1.2.2-blue?style=for-the-badge&logo=github" alt="Recon Plugin v1.2.3">
-  <img src="https://img.shields.io/badge/Vuln--Detect--Plugin-v1.0.0-red?style=for-the-badge&logo=github" alt="Vuln Detect Plugin v1.3.2">
+  <img src="https://img.shields.io/badge/Recon--Plugin-v1.2.2-blue?style=for-the-badge&logo=github" alt="Recon Plugin v1.2.4">
+  <img src="https://img.shields.io/badge/Vuln--Detect--Plugin-v1.0.0-red?style=for-the-badge&logo=github" alt="Vuln Detect Plugin v1.3.3">
   <img src="https://img.shields.io/badge/Python-3.10%2B-green?style=for-the-badge&logo=python" alt="Python Version">
 </p>
 
@@ -16,12 +16,12 @@ Dự án này cung cấp các endpoint và công cụ tinh chỉnh để Claude 
 ---
 ## Chi tiết các Plugin
 
-- **_[1.2.3] recon-plugin:_** skill for infomation gathering
+- **_[1.2.4] recon-plugin:_** skill for infomation gathering
     - client-side-assessment: HTML/JS analysis, browser storage assessment, detect hidden endpoint/param/function
     - js-recon: JS analysis, explanation auth flow, encryption analysis, 
 
 
-- **_[1.3.2] vuln-detect-plugin:_** skill for vulnerabilities assesment / pentest
+- **_[1.3.3] vuln-detect-plugin:_** skill for vulnerabilities assesment / pentest
     - sqli-detect (testing ...)
     - nosqli-detect (testing ...)
     - gen-report (testing ...)
@@ -32,3 +32,6 @@ Dự án này cung cấp các endpoint và công cụ tinh chỉnh để Claude 
 claude plugin marketplace add Chid0k/claude-marketplace
 ```
 
+---
+
+Update: New Agent

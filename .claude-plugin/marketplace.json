@@ -18,8 +18,16 @@
   ],
   "agents": [
     {
-      "name": "pentester-assistant",
+      "name": "assistant",
       "description": "An agent that uses the pentest-plugin to perform penetration testing tasks."
+    },
+    {
+      "name": "petester",
+      "description": "An agent that utilizes the vuln-detect-plugin to identify vulnerabilities in web applications."
+    },
+    {
+      "name": "gen-report-sub-agent",
+      "description": "An agent that leverages the recon-plugin to conduct reconnaissance and gather information about target web applications."
     }
   ]
 }

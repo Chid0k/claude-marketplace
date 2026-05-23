@@ -1,5 +1,5 @@
 ---
-name: pentester-assistant
+name: assistant
 description: It assists penetration testers in searching for and detecting security issues.
 model: sonnet
 color: cyan

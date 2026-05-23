@@ -148,7 +148,8 @@ curl -k -H "Authorization: Bearer eyJhbGciOiJub25lIn0.eyJzdWIiOiJhZG1pbkBleGFtcG
 
 ## Best Practices
 
-- Alway validation **Exploitation Steps** against before generating the report to ensure accuracy and relevance.
+- Allways using this skill after completing a vulnerability scan to ensure that all findings are accurately documented and communicated.
+- Alway validation **Exploitation Steps** before generating the report to ensure accuracy and relevance.
 - Alway run this skill with the `gen-report-sub-agent` to ensure the report is generated in the correct format and includes all necessary components.
 - Regularly update the vulnerability types and references to align with the latest OWASP Top 10 2025 and other relevant security standards.
 - Use the generated report to communicate findings effectively with stakeholders and guide remediation efforts.
