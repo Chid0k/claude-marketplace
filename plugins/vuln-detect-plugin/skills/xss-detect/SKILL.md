@@ -4,7 +4,7 @@ description: Finding Cross-Site Scripting vulnerabilities in web applications.
 ---
 
 # Overview
-This skill focuses on detecting Cross-Site Scripting (XSS) vulnerabilities in web applications. XSS is a common security flaw that allows attackers to inject malicious scripts into web pages viewed by other users. This skill will cover various techniques and tools for identifying and exploiting XSS vulnerabilities.
+This skill focuses on detecting Cross-Site Scripting (XSS) vulnerabilities in web applications. XSS is a common security flaw that allows attackers to inject malicious HTML tag/JS scripts into web pages viewed by other users. This skill will cover various techniques and tools for identifying and exploiting XSS vulnerabilities.
 
 ### Prerequisites & Tools
 
@@ -21,6 +21,8 @@ This skill focuses on detecting Cross-Site Scripting (XSS) vulnerabilities in we
 - **Data-flow tracking**: Find where user input is being reflected in the application and how it is being processed. This will help you identify potential injection points.
 
 - **Don't trust client-side validation**: Always validate and sanitize user input on the server-side as well.
+
+- **HTML injection is also a vulnerability.** Even if the application properly encodes user input to prevent script execution, it may still be vulnerable to HTML injection, which can be used for phishing attacks or defacement.
 
 
 # Approach 
