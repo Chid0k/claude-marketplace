@@ -1,5 +1,5 @@
 ---
-name: client-side-assessment
+name: client-side-detect
 description: Perform client-side assessment vulnerability scans on web applications to identify potential security weaknesses and vulnerabilities.
 disable-model-invocation: true
 ---
@@ -7,6 +7,7 @@ disable-model-invocation: true
 # Webpage Content Review & Browser Storage Security Auditor
 
 ## Overview
+
 This skill guides performing automated information security testing and evaluation on the client-side interface of web applications. The focus of this skill is detecting information leaks in source code/static files and evaluating the secure configuration of browser storage mechanisms.
 
 
@@ -62,11 +63,14 @@ Use regular expressions (Regex) or manually traverse the collected source code t
 
 - Check for any client-side logic that could be manipulated by an attacker (e.g., price manipulation, role escalation) and whether there are any client-side checks that should be enforced on the server side.
 
+- Vulnerable functions probably indicate the presence of vulnerabilities. For example, functions that directly manipulate the DOM with user input without proper sanitization could be vulnerable to XSS attacks. (E.g., `document.write(userInput)`, `innerHTML = userInput`, etc.)  
+
 - Look for any use of `eval()`, `setTimeout()`, or `setInterval()` with dynamic content, which could indicate potential XSS vulnerabilities.
 
 - Analyze the use of third-party libraries and frameworks for known vulnerabilities or outdated versions that may have security issues.
 
 ### Step 3: Input Point & Endpoint Structure Analysis
+
 1. **Hidden Inputs:** Search for `<input type="hidden">` tags in HTML forms to identify any hidden logic control parameters (such as `role`, `price`, `user_id`) that users can manipulate.
 
 2. **HTTP Headers & URL Parameters:** - List all parameters in the URL (Query Parameters).
@@ -107,6 +111,7 @@ You are granted full access to the tools and permissions to gather information a
 Upon completion of the analysis, the output should be organized into a clearly structured report with the following sections:
 
 ### 1. Target Summary
+
 - **URL/Application:** [Website link or system identifier]
 
 - **Discovery Technology:** [Framework, CMS, JS Library, REST/WebSockets connection protocol...]
@@ -121,19 +126,28 @@ List all APIs found in the static source code in detail:
 
 ### 3. Sensitive Data & Hardcoded Content
 Report specific details of found sensitive data strings:
+
 - **Data Type:** (Examples: API Key, Password-containing Comment, Link Staging...)
+
 - **Detected Content:** [Raw data or hardcoded string]
 
 - **Location Found:** [JS file name, line number (if any), or specific HTML tag]
 
+- **Probable Vulnerable Functionality:** [Description of any suspicious or potentially harmful functions found] 
+
 ### 4. Browser Storage Assessment
+
 - **LocalStorage:** [List Key-Values] -> [Sensitivity & Lifespan Assessment]
+
 - **SessionStorage:** [List Key-Values] -> [Logout Deletion Mechanism Assessment]
+
 - **IndexedDB/WebSQL:** [DB Structure & Detected Data]
 
 ### 5. Security Risk & Exploitation Assessment Matrix
 Based on the information gathered above, provide a security impact assessment:
+
 - **Severity Level:** (Critical / High / Medium / Low / Info)
+
 - **Hypothetical Attack Scenario:** (Example: An attacker could exploit the hidden endpoint `/api/internal/...` combined with changing the `role` value in LocalStorage to escalate privileges due to the lack of server-side validation).
 
 - **Recommended Remediation:** Instruct developers on how to modify the source code (e.g., change the token to an `HttpOnly` cookie, encrypt client data, remove the debug log during production builds).

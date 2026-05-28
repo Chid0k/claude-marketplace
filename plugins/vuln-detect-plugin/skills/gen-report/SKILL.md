@@ -33,6 +33,7 @@ Detail summary of vulnerability types referencing OWASP Top 10 2025 in file `./R
    - **Exploitation Steps:** Detailed steps for exploiting each vulnerability, including any necessary tools or techniques.
    - **Proof of Impact:** Evidence demonstrating the impact of the vulnerability, such as screenshots, logs, or data exfiltration examples.
    - **Remediation Steps:** Recommended steps for mitigating or fixing each vulnerability, including code changes, configuration adjustments, or other necessary actions.
+4. Export the generated report in Markdown format for easy sharing and documentation.
 
 ## Example Usage
 

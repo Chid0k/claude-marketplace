@@ -11,6 +11,8 @@ description: Finding Server-Side Template Injection vulnerabilities in web appli
 
 # Methodology
 
+# Examples
+
 # Tips & Tricks
 
 # References

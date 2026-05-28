@@ -25,6 +25,8 @@ Dự án này cung cấp các endpoint và công cụ tinh chỉnh để Claude 
     - sqli-detect (testing ...)
     - nosqli-detect (testing ...)
     - gen-report (testing ...)
+    - xss-detect: Find XSS vulnerability
+    - xxe-detect (Updating ...)
 
 
 ### Thêm marketplace
