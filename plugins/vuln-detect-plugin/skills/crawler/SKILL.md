@@ -38,10 +38,10 @@ When operating as an AI pentester or bug bounty hunter, you must adopt the follo
 
   | Number | URL | Method | Parameters | Methods Supported | Authentication Required | Functionality | Notes |
 | :---: | :--- | :---: | :--- | :---: | :---: | :--- | :--- |
-| **#001** | `/login` | `GET` | Không có | `GET`, `POST` | **No** | Screen login function. |  None |
-| **#002** | `/login` | `POST` | `username`, `password`, `csrf_token` (hidden) | `POST` | **No** | Submit login form. | Probe Stack Traces |
-| **#003** | `/api/v1/users/profile` | `GET` | `user_id` (URL parameter) | `GET`, `PUT`, `DELETE` | **Yes** | Get current user profile. | Required user verification |
-| **#004** | `/api/data/export` | `POST` | `csrf_token` (hidden) | `POST` | **No** | Submit data export form. | Create data in `/api/data/create` before export |
+| **#001** | `http://example.com/login` | `GET` | Không có | `GET`, `POST` | **No** | Screen login function. |  None |
+| **#002** | `http://api.example.com/login` | `POST` | `username`, `password`, `csrf_token` (hidden) | `POST` | **No** | Submit login form. | Probe Stack Traces |
+| **#003** | `http://api.example.com/v1/users/profile` | `GET` | `user_id` (URL parameter) | `GET`, `PUT`, `DELETE` | **Yes** | Get current user profile. | Required user verification |
+| **#004** | `http://api.example.com/v1/api/data/export` | `POST` | `csrf_token` (hidden) | `POST` | **No** | Submit data export form. | Create data in `/api/data/create` before export |
 
 ---
 # Methodology
@@ -50,17 +50,25 @@ When operating as an AI pentester or bug bounty hunter, you must adopt the follo
 
 ## Black Box Testing
 
-1. **Step 1**: Enbale Playwright MCP and configure proxy over Burp MCP to capture all interactions with the target application.
+1. **Step 1**: Mustbe enbale Playwright MCP with proxy set to `127.0.0.1:8080` to capture all interactions in BurpSuite with the target application.
+  - Check all requests in Playwright MCP to ensure that they are being captured correctly and that all interactions with the application are being logged for analysis.
+  - All requests from Playwright must go through Burpsuite.
+  - if using `curl` or `httpie`, custom proxy through `127.0.0.1:8080` to ensure that all interactions are captured by Burp MCP for analysis.
 
 2. **Step 2**: Interact with the application as a normal user would, exploring all functionalities and features to understand how the application works and where potential vulnerabilities may lie.
  - For each page or functionality, must bef open new a windows of Playwright and interact with the application, ensuring that all interactions are captured by Burp MCP for analysis.
 
  - Interact with forms, buttons, links, and any user-controllable elements to identify potential entry points and parameters. Using realistic input values to trigger different application behaviors and responses. DO NOT use destructive payloads during this phase.
-  - Enter a form and upload a valid file according to the application context, such as a profile picture or document, to see how the application handles file uploads and whether it exposes any vulnerabilities in the process.
 
- - Calling `client-side-detect` to analyze HTML/JS responses to identify hidden fields, custom parameters, and any client-side logic that may indicate potential vulnerabilities or areas of interest.
+ - Enter a form and upload a valid file according to the application context, such as a profile picture or document, to see how the application handles file uploads and whether it exposes any vulnerabilities in the process.
 
- - Save any requests to spreadsheet with the following columns: `Number`, `URL`, `Method`, `Parameters` (include hidden or custom), `Methods Supported`, `Authentication Required`, `Functionality`, `Notes`
+3. **Step 3**: Analyze the captured requests and responses in Burp MCP to identify potential entry points, parameters, and functionalities that may be vulnerable to attacks.
+  - Each request in HTTP history tab of Burp MCP should be analyzed to identify the URL, HTTP method, parameters (including hidden or custom), supported methods, authentication requirements, functionality, and any notes on potential vulnerabilities or areas of interest.
+
+  - Can be calling `client-side-detect` to analyze HTML/JS responses to identify hidden fields, custom parameters, and any client-side logic that may indicate potential vulnerabilities or areas of interest.
+
+  - Save any requests to spreadsheet with the following columns: `Number`, `URL`, `Method`, `Parameters` (include hidden or custom), `Methods Supported`, `Authentication Required`, `Functionality`, `Notes`
+
 
 ### Example
   ```

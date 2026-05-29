@@ -21,7 +21,7 @@ Dự án này cung cấp các endpoint và công cụ tinh chỉnh để Claude 
     - js-recon: JS analysis, explanation auth flow, encryption analysis, 
 
 
-- **_[1.7.1] vuln-detect-plugin:_** skill for vulnerabilities assesment / pentest
+- **_[1.7.2] vuln-detect-plugin:_** skill for vulnerabilities assesment / pentest
     - sqli-detect (testing ...)
     - nosqli-detect (testing ...)
     - gen-report (testing ...)
@@ -37,4 +37,4 @@ claude plugin marketplace add Chid0k/claude-marketplace
 
 ---
 
-Update: Crawler tools
+Update: Changed Crawler tools

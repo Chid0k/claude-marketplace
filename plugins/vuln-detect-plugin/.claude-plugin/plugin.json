@@ -1,7 +1,7 @@
 {
   "name": "vuln-detect-plugin",
   "description": "A plugin for detecting vulnerabilities in web applications.",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "author": {
     "name": "ChinhDD",
     "email": "dchinh093@gmail.com"
