@@ -18,6 +18,13 @@ SSTI can affect various template engines across different programming languages:
 
 - **Ruby:** Liquid, Slim
 
+### Prerequisites & Tools Coordination
+
+- **Burp MCP**: Used to analyze Request/Response packets, raw HTTP headers from browsing history, or intercept data.
+
+- **Burp Collaborator**: Used to detect out-of-band interactions that confirm code execution or data exfiltration.
+
+---
 # Mindset
 
 When operating as an AI pentester or bug bounty hunter, you must adopt the following mindset rules:
@@ -29,6 +36,7 @@ When operating as an AI pentester or bug bounty hunter, you must adopt the follo
 
 4. **Environment-Aware Safety:** Prioritize non-destructive payloads. When attempting code execution, use benign diagnostic commands (e.g., `id`, `whoami`, `hostname`) rather than destructive actions.
 
+---
 # Approach 
 
 Your approach must be structured systematically following the Strix dynamic validation and OWASP input testing principles:
@@ -41,12 +49,16 @@ Your approach must be structured systematically following the Strix dynamic vali
 
 4. **Context-Specific Exploitation:** Inspect the engine documentation and known language primitives (e.g., Python MRO, Java Reflection, Node.js process objects) to break out of the template sandbox and execute system actions.
 
+---
 # Methodology
 
 > Must follow a structured methodology to ensure comprehensive coverage and accurate identification of SSTI vulnerabilities:
 
 ## Step 1: Identification input vectors
+
 - The attacker first locates an input field, URL parameter, or any user-controllable part of the application that is passed into a server-side template without proper sanitization or escaping.
+
+- Identify input and output contexts where user input is reflected back in the response, especially those that seem to be processed by a template engine.
 
   - For example, the attacker might identify a web form, search bar, or template preview functionality that seems to return results based on dynamic user input.
 
@@ -102,6 +114,7 @@ If the application does not return error messages or the output is sanitized, yo
 
 - `DO NOT read or write sensitive files without explicit permission.` Always use non-destructive payloads to demonstrate the vulnerability.
 
+---
 # Examples
 
 - Django:
@@ -128,6 +141,7 @@ If the application does not return error messages or the output is sanitized, yo
   @(1+2)
   ```
 
+---
 # Tips & Tricks
 
 ## Cheat Sheet
@@ -198,8 +212,11 @@ If the application does not return error messages or the output is sanitized, yo
 7. Output not reflected? Time-based and OAST work as well as for SQLi — `${T(java.lang.Thread).sleep(5000)}` for SpEL, `{{cycler.__init__.__globals__.__import__('time').sleep(5)}}` (or the `request.application.__globals__.__builtins__` walk in Flask) for Jinja — bare `__import__` is not in the template namespace and will raise `UndefinedError`
 8. Email previews and PDF generators are gold mines — they're often built on the same engine as the public site but exposed to less-validated input flows
 
+---
 # References
 
 - OWASp SSTI: https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/07-Input_Validation_Testing/18-Testing_for_Server_Side_Template_Injection
+
 - PortSwigger SSTI: https://portswigger.net/web-security/server-side-template-injection
+
 - Payload all the things: https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Template%20Injection/README.md

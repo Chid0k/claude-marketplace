@@ -18,6 +18,8 @@ Per OWASP WSTG (WSTG-INPV-07), the test objectives are to identify XML injection
 
 - **Burp MCP**: Used to analyze Request/Response packets, raw HTTP headers from browsing history, or intercept data.
 
+- **Burp Collaborator**: Used to detect out-of-band interactions that confirm file access, SSRF, or code execution.
+
 # Mindset
 
 Treat every XML consumer as untrusted until parser hardening is proven.

@@ -10,14 +10,16 @@ This skill focuses on identifying potential SQL injection vulnerabilities in web
 
 - **Burp MCP**: Used to analyze Request/Response packets, raw HTTP headers from browsing history, or intercept data.
 
+---
 # Mindset
 
 - RULE: `Injection` is insert and extend.
 - All input parameters and values that are sent to the server should be considered as potential attack vectors for SQL injection.
-- Identyfication type of DBMS (e.g., MySQL, PostgreSQL, Oracle, SQL Server) and type of SQL query (e.g., SELECT, INSERT, UPDATE, DELETE) is crucial for understanding the potential impact of the vulnerability and for crafting effective payloads.
+- Identification type of DBMS (e.g., MySQL, PostgreSQL, Oracle, SQL Server) and type of SQL query (e.g., SELECT, INSERT, UPDATE, DELETE) is crucial for understanding the potential impact of the vulnerability and for crafting effective payloads.
 - Analyzing unusual response, error messages, or behavior of the application can provide valuable insights into the presence of SQL injection vulnerabilities.
 - Prioritize checking SQLi vulnerabilities at locations related to table names, column names, or the `order_by` clause, as these locations cannot use `prepare statements`. However, other locations cannot be ruled out.
 
+---
 # Approach 
 
 - Identify all input Parameters and Values that are sent to the server, including URL parameters, form data, cookies, and HTTP headers.
@@ -26,6 +28,7 @@ This skill focuses on identifying potential SQL injection vulnerabilities in web
 
 - Imagine query structure and database schema based on the application's functionality and behavior to craft effective payloads for testing.
 
+---
 # Methodology
 
 Following the OWASP Testing Guide for SQL Injection (https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Testing_for_SQL_Injection) and allways flow this steps to ensure a systematic and thorough approach to SQL injection testing.
@@ -142,7 +145,7 @@ Different databases offer various methods for creating out-of-band connections, 
   http://example.com/product?id=1 -> return product details 
   http://example.com/product?id=1' AND 1=1; SELECT table_name FROM information_schema.tables -- -> return table names in the response
   ```
-
+---
 # Examples of SQL Injection Vulnerabilities
 
 ## Authentication bypass
@@ -197,6 +200,7 @@ Stacked Queries SQL Injection is a technique where multiple SQL statements are e
 1; EXEC xp_cmdshell('whoami') --
 ```
 
+---
 # Tips & Tricks
 
 ## Bypass WAF techniques
@@ -299,7 +303,7 @@ Bypass using keywords case insensitive or an equivalent operator.
 
 - The payload for the DBMS is always created based on the files inside the `assets` directory, not automatically generated.
 
-
+---
 # References
 - OWASP Testing Guide for SQL Injection: https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Testing_for_SQL_Injection
 - SQL Injection Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Cheat_Sheet.html
