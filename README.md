@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Recon--Plugin-v1.2.2-blue?style=for-the-badge&logo=github" alt="Recon Plugin v1.2.5">
-  <img src="https://img.shields.io/badge/Vuln--Detect--Plugin-v1.0.0-red?style=for-the-badge&logo=github" alt="Vuln Detect Plugin v1.7.1">
+  <img src="https://img.shields.io/badge/Vuln--Detect--Plugin-v1.0.0-red?style=for-the-badge&logo=github" alt="Vuln Detect Plugin v1.7.3">
   <img src="https://img.shields.io/badge/Python-3.10%2B-green?style=for-the-badge&logo=python" alt="Python Version">
 </p>
 
@@ -21,7 +21,7 @@ Dự án này cung cấp các endpoint và công cụ tinh chỉnh để Claude 
     - js-recon: JS analysis, explanation auth flow, encryption analysis, 
 
 
-- **_[1.7.2] vuln-detect-plugin:_** skill for vulnerabilities assesment / pentest
+- **_[1.7.3] vuln-detect-plugin:_** skill for vulnerabilities assesment / pentest
     - sqli-detect (testing ...)
     - nosqli-detect (testing ...)
     - gen-report (testing ...)

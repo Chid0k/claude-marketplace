@@ -32,7 +32,7 @@ When operating as an AI pentester or bug bounty hunter, you must adopt the follo
   - Using Options or Trace or Custom HTTP methods to identify HTTP method support and potential misconfigurations.
 
 3. **Spreadsheet**: Export all findings into a spreadsheet for further analysis and to keep track of potential vulnerabilities and areas of interest. 
-  - Export CSV files: `entry_point.csv`
+  - Export Markdown files: `entry_point.md`
   - Columns: `Number`, `URL`, `Method`, `Parameters` (include hidden or custom), `Methods Supported`, `Authentication Required`, `Functionality`, `Notes`
   - Example:
 
@@ -53,7 +53,8 @@ When operating as an AI pentester or bug bounty hunter, you must adopt the follo
 1. **Step 1**: Mustbe enbale Playwright MCP with proxy set to `127.0.0.1:8080` to capture all interactions in BurpSuite with the target application.
   - Check all requests in Playwright MCP to ensure that they are being captured correctly and that all interactions with the application are being logged for analysis.
   - All requests from Playwright must go through Burpsuite.
-  - if using `curl` or `httpie`, custom proxy through `127.0.0.1:8080` to ensure that all interactions are captured by Burp MCP for analysis.
+  - Use `PlayWright` in parallel with `Curl`, custom proxy through `127.0.0.1:8080` to ensure that all interactions are captured by Burp MCP for analysis.
+  - DO NOT USE THE `curl` OR `Playwright` COMMANDS INDIVIDUALLY; you must combine both tools.
 
 2. **Step 2**: Interact with the application as a normal user would, exploring all functionalities and features to understand how the application works and where potential vulnerabilities may lie.
  - For each page or functionality, must bef open new a windows of Playwright and interact with the application, ensuring that all interactions are captured by Burp MCP for analysis.
